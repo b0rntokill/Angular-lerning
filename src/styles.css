@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 1em;
+    background-color: #ffffff;
+    min-width: 320px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    opacity: 0.8;
+  }
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+@media (min-width: 320px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 50px;
+        max-width: 1150px;
+    }
+}
