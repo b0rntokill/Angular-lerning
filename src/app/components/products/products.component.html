@@ -1,7 +1,7 @@
 <section class="catalog">
   <div class="catalog__wrapper container">
     <ul class="catalog__list">
-      <li class="catalog__item product" *ngFor="let prod of products | async">
+      <li class="catalog__item product" *ngFor="let prod of products">
         <a class="product__link-image" [title]="'Подробнее о ' + prod.name">
             <img class="product__img" [src]="prod.imageUrl" [alt]="prod.name" width="200" height="200">
         </a>

@@ -4,9 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { DataService } from './data.service';
-import { CatalogComponent } from './catalog/catalog.component';
-import { ProductsComponent } from './products/products.component';
+import { CatalogComponent, ProductsComponent } from './components';
+import { CatalogService } from './services/catalog-service/catalog.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,7 @@ import { ProductsComponent } from './products/products.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [CatalogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
