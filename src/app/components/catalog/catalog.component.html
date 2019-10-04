@@ -4,4 +4,12 @@
     </div>
 </section>
 
-<app-products></app-products>
+<section class="catalog">
+	<div class="catalog__wrapper container">
+		<ul class="catalog__list">
+			<li class="catalog__item" *ngFor="let product of products">
+				<app-products [product]="product"></app-products>
+			</li>
+		</ul>
+	</div>
+</section>

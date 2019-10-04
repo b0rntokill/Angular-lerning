@@ -1,2 +1,2 @@
 export * from './catalog/catalog.component';
-export * from './products/products.component';
+export * from './catalog/products/products.component';
