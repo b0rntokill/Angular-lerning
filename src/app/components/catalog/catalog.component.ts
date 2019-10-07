@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CatalogService } from '../../services/catalog-service/catalog.service';
 
+import { CatalogService } from '../../services/catalog.service';
 import { ProductModel } from '../../models/product.model';
 
 @Component({
@@ -18,7 +18,7 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit() {
     this.catalogService.getProducts()
-      .subscribe(products => this.products = products);
+    .subscribe(products => this.products = products);
   }
 
 }

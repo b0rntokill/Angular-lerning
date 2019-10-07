@@ -1,0 +1,9 @@
+<div class="product-details" *ngIf="product">
+	<img class="product-details__img" [src]="product.imageUrl" [alt]="product.name" width="200" height="200">
+	<div class="product-details__wrapper">
+		<h3 class="product-details__title">{{product.name}}</h3>
+		<span class="product-details__description">{{product.description}}</span>
+		<span class="product-details__price">{{product.price}} руб.</span>
+		<a class="product-details__cart">В корзину</a>
+	</div>
+</div>

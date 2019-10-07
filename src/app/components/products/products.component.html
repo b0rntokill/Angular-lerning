@@ -1,10 +1,10 @@
-<article class="product">
-    <a class="product__link-image" [title]="'Подробнее о ' + product.name">
+<article class="product" >
+    <a class="product__link-image" [title]="'Подробнее о ' + product.name" routerLink="/product-details/{{product.id}}">
         <img class="product__img" [src]="product.imageUrl" [alt]="product.name" width="200" height="200">
     </a>
     <div class="product__wrapper">
       <div class="product__description-wrapper">
-          <a class="product__link-title" [title]="'Подробнее о ' + product.name">
+          <a class="product__link-title" [title]="'Подробнее о ' + product.name" routerLink="/product-details/{{product.id}}">
           <h3 class="product__title">{{product.name}}</h3>
           </a>
           <span class="product__description">{{product.description}}</span>
