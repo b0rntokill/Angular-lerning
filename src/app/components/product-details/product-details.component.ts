@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
-import { ProductModel } from '../../models/product.model';
-import { CatalogService } from '../../services/catalog.service';
+import { ProductModel } from 'src/app/models/product.model';
 
+import { CatalogService, CartService } from 'src/app/services';
 
 @Component({
   selector: 'app-product-details',
@@ -17,16 +18,26 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private catalogService: CatalogService,
+    private cartService: CartService,
+    private location: Location
   ) {}
 
-  getHero(): void {
+  addToCart(product: ProductModel) {
+    this.cartService.addToCart(product);
+  }
+
+  getProductDetails(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.catalogService.getProductDetails(id)
       .subscribe(product => this.product = product);
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   ngOnInit(): void {
-    this.getHero();
+    this.getProductDetails();
   }
 
 }

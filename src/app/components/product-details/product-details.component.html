@@ -1,9 +1,13 @@
-<div class="product-details" *ngIf="product">
-	<img class="product-details__img" [src]="product.imageUrl" [alt]="product.name" width="200" height="200">
-	<div class="product-details__wrapper">
-		<h3 class="product-details__title">{{product.name}}</h3>
-		<span class="product-details__description">{{product.description}}</span>
-		<span class="product-details__price">{{product.price}} руб.</span>
-		<a class="product-details__cart">В корзину</a>
+<section class="product-details container">
+	<h2 class="product-details__header-title">Подробнее о товаре</h2>
+	<div class="product-details__main" *ngIf="product">
+		<img class="product-details__img" [src]="product.imageUrl" [alt]="product.name" width="200" height="200">
+		<div class="product-details__wrapper">
+			<h3 class="product-details__title">{{product.name}}</h3>
+			<span class="product-details__description">{{product.description}}</span>
+			<span class="product-details__price">{{product.price}} руб.</span>
+			<button class="product-details__cart" (click)="addToCart(product)">В корзину</button>
+		</div>
 	</div>
-</div>
+	<button class="product-details__button" (click)="goBack()">Назад</button>
+</section>

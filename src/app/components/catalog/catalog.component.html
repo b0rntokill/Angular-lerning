@@ -1,11 +1,6 @@
-<section class="page-caption">
-    <div class="page-caption__wrapper container">
-        <h2 class="page-caption__title">Каталог товаров</h2>
-    </div>
-</section>
-
 <section class="catalog">
-	<div class="catalog__wrapper container">
+    <div class="catalog__wrapper container">
+        <h2 class="catalog__title">Каталог товаров</h2>
 		<ul class="catalog__list">
 			<li class="catalog__item" *ngFor="let product of products">
 				<app-products [product]="product"></app-products>

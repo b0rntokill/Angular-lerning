@@ -1,4 +1,4 @@
-<article class="product" >
+<article class="product">
     <a class="product__link-image" [title]="'Подробнее о ' + product.name" routerLink="/product-details/{{product.id}}">
         <img class="product__img" [src]="product.imageUrl" [alt]="product.name" width="200" height="200">
     </a>
@@ -11,7 +11,7 @@
       </div>
       <div class="product__price-wrapper">
           <p class="product__price">{{product.price}} руб.</p>
-          <a class="product__cart">В корзину</a>
+          <a class="product__cart" (click)="addToCart(product)">В корзину</a>
       </div>
     </div>
 </article>

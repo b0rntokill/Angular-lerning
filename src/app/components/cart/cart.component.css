@@ -1,0 +1,41 @@
+.cart__caption {
+    text-align: center;
+    font-size: 2em;
+}
+
+.cart__wrapper {
+    margin-bottom: 30px;
+    box-shadow: 0 0 2px black;
+}
+
+.cart__caption-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cart__caption-button {
+    height: 24px;
+    border: none;
+    border-radius: 6px;
+    background-color: grey;
+}
+
+.cart__list {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+}
+
+.cart__item {
+    margin-bottom: 30px;
+}
+
+.cart__item:not(:nth-child(4n)) {
+    margin-right: 5.3968%;
+}
