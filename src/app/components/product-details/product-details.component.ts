@@ -22,17 +22,17 @@ export class ProductDetailsComponent implements OnInit {
     private location: Location
   ) {}
 
-  addToCart(product: ProductModel) {
+  public addToCart(product: ProductModel) {
     this.cartService.addToCart(product);
   }
 
-  getProductDetails(): void {
+  public getProductDetails(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.catalogService.getProductDetails(id)
       .subscribe(product => this.product = product);
   }
 
-  goBack(): void {
+  public goBack(): void {
     this.location.back();
   }
 

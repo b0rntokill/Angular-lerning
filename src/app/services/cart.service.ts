@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { ProductModel } from 'src/app/models/product.model';
 
@@ -15,11 +16,11 @@ export class CartService {
     this.productsInCart.push(product);
   }
 
-  public getProducts() {
+  public getProducts(): ProductModel[] {
     return this.productsInCart;
   }
 
-  public clearCart() {
+  public clearCart(): ProductModel[] {
     this.productsInCart = [];
     return this.productsInCart;
   }
