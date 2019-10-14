@@ -1,17 +1,10 @@
 <section class="cart">
     <div class="cart__wrapper container">
 		<h2 class="cart__caption">Корзина</h2>
-		<ul class="cart__caption-list">
-			<li class="cart__caption-item">
-				<span>В корзине: {{productsInCart.length}} товара</span>
-			</li>
-			<li class="cart__caption-item">
-				<button class="cart__caption-button" (click)="clearCart()">Очистить корзину</button>
-			</li>
-		</ul>
+		<span class="cart__description">В корзине: {{productsInCart.length}} товара</span>
 		<ul class="cart__list">
 			<li class="cart__item" *ngFor="let product of productsInCart">
-				<app-product-in-cart [product]="product"></app-product-in-cart>
+				<app-product-in-cart [product]="product" (onDeleteProduct)="onDeleteProduct($event)"></app-product-in-cart>
 			</li>
 		</ul>
 	</div>

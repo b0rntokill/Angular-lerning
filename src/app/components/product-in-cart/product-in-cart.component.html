@@ -1,10 +1,10 @@
 <article class="product-in-cart">
-    <a class="product-in-cart__link-image" [title]="'Подробнее о ' + product.name">
+    <a class="product-in-cart__link-image" [title]="'Подробнее о ' + product.name" routerLink="/product-details/{{product.id}}">
         <img class="product-in-cart__img" [src]="product.imageUrl" [alt]="product.name" width="200" height="200">
     </a>
     <div class="product-in-cart__wrapper">
       <div class="product-in-cart__description-wrapper">
-          <a class="product-in-cart__link-title" [title]="'Подробнее о ' + product.name">
+          <a class="product-in-cart__link-title" [title]="'Подробнее о ' + product.name" routerLink="/product-details/{{product.id}}">
           <h3 class="product-in-cart__title">{{product.name}}</h3>
           </a>
           <span class="product-in-cart__description">{{product.description}}</span>
@@ -12,5 +12,6 @@
       <div class="product-in-cart__price-wrapper">
           <p class="product-in-cart__price">{{product.price}} руб.</p>
       </div>
+      <button class="product-in-cart__button" (click)="deleteProduct(product)">Убрать из козины</button>
     </div>
 </article>

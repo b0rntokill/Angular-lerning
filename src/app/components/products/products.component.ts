@@ -16,8 +16,8 @@ export class ProductsComponent implements OnInit {
     private cartService: CartService
   ) { }
 
-  public addToCart(product: ProductModel) {
-    this.cartService.addToCart(product);
+  public addToCart(product: ProductModel): void {
+    this.cartService.addToCart(product).subscribe();
   }
 
   ngOnInit() {

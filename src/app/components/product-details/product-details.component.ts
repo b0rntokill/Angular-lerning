@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit {
   ) {}
 
   public addToCart(product: ProductModel) {
-    this.cartService.addToCart(product);
+    this.cartService.addToCart(product).subscribe();
   }
 
   public getProductDetails(): void {

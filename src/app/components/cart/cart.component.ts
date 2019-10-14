@@ -16,12 +16,13 @@ export class CartComponent implements OnInit {
     private cartService: CartService
   ) { }
 
-  public clearCart() {
-    this.cartService.clearCart();
-    this.productsInCart = [];
+  onDeleteProduct(product: ProductModel) {
+    this.productsInCart = this.productsInCart.filter(item => item !== product);
+    this.cartService.deleteProduct(product).subscribe();
   }
 
   ngOnInit() {
-    this.productsInCart = this.cartService.getProducts();
+    this.cartService.getCart()
+      .subscribe(productsInCart => this.productsInCart = productsInCart);
   }
 }

@@ -1,27 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { ProductModel } from 'src/app/models/product.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  public productsInCart: ProductModel[] = [];
+  private cartUrl = 'api/cart';
 
-  constructor() { }
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
-  public addToCart(product: ProductModel) {
-    this.productsInCart.push(product);
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  public addToCart(product: ProductModel): Observable<ProductModel> {
+    return this.http.post<ProductModel>(this.cartUrl, product, this.httpOptions)
   }
 
-  public getProducts(): ProductModel[] {
-    return this.productsInCart;
+  public getCart(): Observable<ProductModel[]> {
+    return this.http.get<ProductModel[]>(this.cartUrl)
   }
 
-  public clearCart(): ProductModel[] {
-    this.productsInCart = [];
-    return this.productsInCart;
+  public deleteProduct(product: ProductModel | number): Observable<ProductModel[]> {
+    const id = typeof product === 'number' ? product : product.id;
+    const url = `${this.cartUrl}/${id}`;
+    
+    return this.http.delete<ProductModel[]>(url, this.httpOptions)
   }
 }
